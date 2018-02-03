@@ -52,10 +52,19 @@ for m in range(0,20,1):
         #thus when it is output you can tell that a number is at position [m,n]
         slicing_array[m,n] = (m + 1) + ((n + 1) / 100) #I feel like there is an easier way to do this
 
+print("The array is only 20x20")
 num_rows = int(input("Enter number of rows to slice: ")) #asks for and retrieves the number of rows that will be sliced
 num_cols = int(input("Enter number of cols to slice: ")) #asks for and retrieves the number of cols that will be sliced
 start_row = int(input("Enter starting row: ")) #asks for and retrieves the starting row
 start_col = int(input("Enter starting col: ")) #asks for and retrieves the starting col
+
+#the following while loop makes sure that someone doesn't try to print out 23 rows of a 20 row matrix
+while (num_rows + start_row > 21) and (num_cols + start_col > 21):
+    print("THE HUMAN HAS MADE AN ERROR FIX IT NOW (index out of range)") #yells at the user for making a mistake
+    num_rows = int(input("Enter number of rows to slice: ")) #asks for and retrieves the number of rows that will be sliced
+    num_cols = int(input("Enter number of cols to slice: ")) #asks for and retrieves the number of cols that will be sliced
+    start_row = int(input("Enter starting row: ")) #asks for and retrieves the starting row
+    start_col = int(input("Enter starting col: ")) #asks for and retrieves the starting col
 
 #this will print the section asked for
 print("\nProblem (3.a.):\n")
