@@ -1,7 +1,7 @@
 #Homework #1 by Isaac Pliskin
 #All problems are included
 import numpy as np #importing numpy library for the arrays
-
+print("Homework #1 for PHYS165 by Isaac Pliskin\n")
 #BEGIN PROBLEM 1
 values = np.ones(100, int)  #creates an array of 100 ones
 
