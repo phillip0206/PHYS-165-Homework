@@ -15,4 +15,3 @@ Here is some data for the beta decay of C60
 5.0090	20450
 5.9943	15798
 7.0028	4785.2
-
