@@ -4,6 +4,8 @@
 from numpy.random import random as rng
 import numpy as np
 import matplotlib.pyplot as plt
+import turtle
+import random
 
 """num_steps=1000
 
@@ -38,16 +40,20 @@ plt.scatter(pos_final[0],pos_final[1])
 plt.hist(pos,num_steps)
 plt.show()"""
 
-x = np.zeros(1000)
-y = np.zeros(1000)
+number_steps = 1000
+x = np.zeros(number_steps)
+y = np.zeros(number_steps)
+colors  = ["red","green","blue","orange","purple","pink","yellow"]
 
+f, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex='col', sharey='row')
+# turtle.speed('fastest')
 
-
-for i in range(0, 1):
-    x_samples = rng(1000)
-    y_samples = rng(1000)
-
-    for i in range(1, 1000):
+for i in range(0, 1000):
+    print("Walk: ", i)
+    x_samples = rng(number_steps)
+    y_samples = rng(number_steps)
+    # turtle.color(colors[i])
+    for i in range(1, number_steps):
         if x_samples[i] < 0.5:
             x[i] = x[i - 1] + 1
         else:
@@ -58,13 +64,14 @@ for i in range(0, 1):
         else:
             y[i] = y[i - 1] - 1
 
+        # turtle.goto(x[i]*10, y[i]*10)
+
     """plt.figure("No Line Plot")
     plt.plot(x, y)
     plt.figure("Line Plot")
     plt.plot(x, y, '--')
     plt.figure("Scatter")
     plt.scatter(x, y, s=2)"""
-    f, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex='col', sharey='row')
     ax1.plot(x, y)
     ax1.set_title('Normal Plot')
     ax2.scatter(x, y, s=2)
@@ -74,4 +81,5 @@ for i in range(0, 1):
     ax4.plot(x, y, '--')
     ax4.set_title('Plot But With Dashed Lines')
 
+# turtle.exitonclick()
 plt.show()
