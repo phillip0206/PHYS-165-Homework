@@ -154,3 +154,7 @@ plt.show(block=False)
 # Part 2.b.
 
 plt.show()
+
+# Part 2.c.
+
+plt.hist(d2a,bins=5)
